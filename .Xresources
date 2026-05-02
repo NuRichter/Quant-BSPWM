@@ -1,0 +1,35 @@
+! Quant BSPWM - Xresources
+
+! DPI (adjust for your display)
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.rgba:       rgb
+Xft.lcdfilter:  lcddefault
+Xft.autohint:   false
+
+! Cursor
+Xcursor.theme:  Catppuccin-Mocha-Pink-Cursors
+Xcursor.size:   24
+
+! Quant Color Palette
+*.foreground:   #e0def4
+*.background:   #16141f
+*.cursorColor:  #f5c2e7
+*.color0:       #0e0c15
+*.color1:       #f38ba8
+*.color2:       #a6e3a1
+*.color3:       #f9e2af
+*.color4:       #89b4fa
+*.color5:       #cba6f7
+*.color6:       #94e2d5
+*.color7:       #e0def4
+*.color8:       #2a2837
+*.color9:       #f5c2e7
+*.color10:      #94e2d5
+*.color11:      #fab387
+*.color12:      #c4a7e7
+*.color13:      #f5c2e7
+*.color14:      #89b4fa
+*.color15:      #f2f0ff
