@@ -1,0 +1,3 @@
+put wallpaper window here
+
+background, lockscreeen
