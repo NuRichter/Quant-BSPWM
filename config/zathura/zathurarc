@@ -1,0 +1,60 @@
+# Quant BSPWM - Zathura Configuration
+
+# General
+set selection-clipboard clipboard
+set adjust-open "best-fit"
+set pages-per-row 1
+set scroll-page-aware true
+set scroll-full-overlap 0.01
+set scroll-step 100
+set zoom-min 10
+set guioptions ""
+set statusbar-home-tilde true
+set window-title-home-tilde true
+set window-title-page true
+set render-loading true
+set font "JetBrainsMono Nerd Font 10"
+
+# Quant Colors
+set default-bg                  "#16141f"
+set default-fg                  "#e0def4"
+set statusbar-bg                "#1e1c2a"
+set statusbar-fg                "#e0def4"
+set inputbar-bg                 "#1e1c2a"
+set inputbar-fg                 "#e0def4"
+set notification-bg             "#16141f"
+set notification-fg             "#e0def4"
+set notification-error-bg       "#16141f"
+set notification-error-fg       "#f38ba8"
+set notification-warning-bg     "#16141f"
+set notification-warning-fg     "#fab387"
+set highlight-color             "#f9e2af80"
+set highlight-active-color      "#f5c2e780"
+set completion-bg               "#1e1c2a"
+set completion-fg               "#e0def4"
+set completion-highlight-bg     "#2a2837"
+set completion-highlight-fg     "#f5c2e7"
+set completion-group-bg         "#1e1c2a"
+set completion-group-fg         "#c4a7e7"
+set index-bg                    "#16141f"
+set index-fg                    "#e0def4"
+set index-active-bg             "#2a2837"
+set index-active-fg             "#f5c2e7"
+
+set recolor                     true
+set recolor-keephue             true
+set recolor-darkcolor           "#e0def4"
+set recolor-lightcolor          "#16141f"
+set recolor-reverse-video       true
+
+# Keybindings
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
+map g goto top

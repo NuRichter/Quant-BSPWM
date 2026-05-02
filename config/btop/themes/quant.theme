@@ -1,0 +1,83 @@
+# Quant BSPWM - BTOP Theme
+
+# Main background
+theme[main_bg]="#16141f"
+
+# Main text color
+theme[main_fg]="#e0def4"
+
+# Title color
+theme[title]="#f5c2e7"
+
+# Highlight color
+theme[hi_fg]="#f5c2e7"
+
+# Selected item bg/fg
+theme[selected_bg]="#2a2837"
+theme[selected_fg]="#f5c2e7"
+
+# Inactive fg
+theme[inactive_fg]="#6e6a86"
+
+# Proc misc
+theme[proc_misc]="#c4a7e7"
+
+# CPU box outline color
+theme[cpu_box]="#c4a7e7"
+
+# Memory/Disks box outline color
+theme[mem_box]="#89b4fa"
+
+# Net box outline color
+theme[net_box]="#94e2d5"
+
+# Processes box outline color
+theme[proc_box]="#cba6f7"
+
+# Box divider line and target value
+theme[div_line]="#2a2837"
+
+# Temperature graph colors
+theme[temp_start]="#94e2d5"
+theme[temp_mid]="#fab387"
+theme[temp_end]="#f38ba8"
+
+# CPU graph colors
+theme[cpu_start]="#89b4fa"
+theme[cpu_mid]="#c4a7e7"
+theme[cpu_end]="#f5c2e7"
+
+# Mem/Disk free meter
+theme[free_start]="#a6e3a1"
+theme[free_mid]="#94e2d5"
+theme[free_end]="#89b4fa"
+
+# Mem/Disk cached meter
+theme[cached_start]="#cba6f7"
+theme[cached_mid]="#c4a7e7"
+theme[cached_end]="#f5c2e7"
+
+# Mem/Disk available meter
+theme[available_start]="#94e2d5"
+theme[available_mid]="#89b4fa"
+theme[available_end]="#c4a7e7"
+
+# Mem/Disk used meter
+theme[used_start]="#f5c2e7"
+theme[used_mid]="#fab387"
+theme[used_end]="#f38ba8"
+
+# Download graph colors
+theme[download_start]="#94e2d5"
+theme[download_mid]="#89b4fa"
+theme[download_end]="#c4a7e7"
+
+# Upload graph colors
+theme[upload_start]="#a6e3a1"
+theme[upload_mid]="#f9e2af"
+theme[upload_end]="#fab387"
+
+# Process start colors
+theme[process_start]="#89b4fa"
+theme[process_mid]="#c4a7e7"
+theme[process_end]="#f5c2e7"

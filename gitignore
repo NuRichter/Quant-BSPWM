@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*~
+.DS_Store
+*.bak
+*.log
+__pycache__/
+node_modules/
+.cache/
