@@ -1,0 +1,20 @@
+/*  Quant BSPWM - Rofi Calculator  */
+
+@import "quant-launcher.rasi"
+
+configuration {
+    show-icons:             false;
+    display-calc:           "  Calc";
+}
+
+window {
+    width:          420px;
+}
+
+listview {
+    lines:          5;
+}
+
+element-text {
+    font:           "JetBrainsMono Nerd Font 11";
+}

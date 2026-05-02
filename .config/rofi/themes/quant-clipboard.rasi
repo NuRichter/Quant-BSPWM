@@ -1,0 +1,21 @@
+/*  Quant BSPWM - Rofi Clipboard Manager  */
+
+@import "quant-launcher.rasi"
+
+configuration {
+    modi:                   "clipboard:greenclip print";
+    show-icons:             false;
+    display-clipboard:      "  Clipboard";
+}
+
+window {
+    width:          550px;
+}
+
+listview {
+    lines:          10;
+}
+
+element-text {
+    font:           "JetBrainsMono Nerd Font 9";
+}

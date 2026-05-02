@@ -1,0 +1,20 @@
+/*  Quant BSPWM - Rofi Emoji Picker  */
+
+@import "quant-launcher.rasi"
+
+configuration {
+    show-icons:             false;
+}
+
+window {
+    width:          480px;
+}
+
+listview {
+    lines:          8;
+    columns:        1;
+}
+
+element-text {
+    font:           "Noto Color Emoji 14";
+}

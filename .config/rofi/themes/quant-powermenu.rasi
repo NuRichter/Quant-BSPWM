@@ -1,0 +1,84 @@
+/*  Quant BSPWM - Rofi Power Menu  */
+
+* {
+    bg:             #16141fE6;
+    bg-alt:         #1e1c2aCC;
+    bg-selected:    #2a2837CC;
+    fg:             #e0def4;
+    fg-dim:         #6e6a86;
+    pink:           #f5c2e7;
+    rose:           #f38ba8;
+    lavender:       #c4a7e7;
+    teal:           #94e2d5;
+    peach:          #fab387;
+}
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    transparency:   "real";
+    location:       center;
+    anchor:         center;
+    width:          400px;
+    border:         2px solid;
+    border-color:   @lavender;
+    border-radius:  16px;
+    background-color: @bg;
+}
+
+mainbox {
+    spacing:        16px;
+    padding:        24px;
+    background-color: transparent;
+    children:       [ "message", "listview" ];
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    font:           "JetBrainsMono Nerd Font Bold 12";
+    text-color:     @pink;
+    background-color: transparent;
+    horizontal-align: 0.5;
+}
+
+listview {
+    columns:        1;
+    lines:          5;
+    spacing:        8px;
+    cycle:          true;
+    dynamic:        true;
+    layout:         vertical;
+    background-color: transparent;
+}
+
+element {
+    padding:        12px 16px;
+    border-radius:  10px;
+    cursor:         pointer;
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @bg-selected;
+    text-color:     @pink;
+    border:         0px 0px 0px 3px;
+    border-color:   @pink;
+}
+
+element-text {
+    font:           "JetBrainsMono Nerd Font 11";
+    background-color: transparent;
+    text-color:     @fg;
+    cursor:         inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element-text selected {
+    text-color:     @pink;
+}

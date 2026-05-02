@@ -1,0 +1,41 @@
+# Quant BSPWM - Yazi Keymaps
+
+[[manager.prepend_keymap]]
+on   = [ "l" ]
+run  = "plugin --sync smart-enter"
+desc = "Enter directory or open file"
+
+[[manager.prepend_keymap]]
+on   = [ "T" ]
+run  = "shell '$SHELL' --block --confirm"
+desc = "Open shell here"
+
+[[manager.prepend_keymap]]
+on   = [ "F" ]
+run  = "plugin --sync hide-preview"
+desc = "Toggle preview"
+
+[[manager.prepend_keymap]]
+on   = [ "." ]
+run  = "hidden toggle"
+desc = "Toggle hidden files"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "d" ]
+run  = "cd ~/Downloads"
+desc = "Go to Downloads"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = "cd ~/Pictures"
+desc = "Go to Pictures"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "c" ]
+run  = "cd ~/.config"
+desc = "Go to .config"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "s" ]
+run  = "cd ~/scripts"
+desc = "Go to scripts"

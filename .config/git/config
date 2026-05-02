@@ -1,0 +1,132 @@
+# Quant BSPWM - Git Configuration
+# User should fill in name/email
+
+[user]
+    name =
+    email =
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+    pager = delta
+    autocrlf = input
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.config/git/ignore
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = "#f5c2e7" bold
+    local = "#c4a7e7"
+    remote = "#a6e3a1"
+
+[color "diff"]
+    meta = "#cba6f7" bold
+    frag = "#89b4fa" bold
+    old = "#f38ba8"
+    new = "#a6e3a1"
+    whitespace = "#f38ba8" reverse
+
+[color "status"]
+    added = "#a6e3a1"
+    changed = "#fab387"
+    untracked = "#f38ba8"
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    side-by-side = true
+    line-numbers = true
+    syntax-theme = "Catppuccin Mocha"
+    minus-style = "syntax #3b1d2e"
+    minus-emph-style = "syntax #6b2e43"
+    plus-style = "syntax #1d3b2e"
+    plus-emph-style = "syntax #2e6b43"
+    line-numbers-minus-style = "#f38ba8"
+    line-numbers-plus-style = "#a6e3a1"
+    line-numbers-zero-style = "#6e6a86"
+    hunk-header-decoration-style = "#2a2837" box ul
+    file-style = "#f5c2e7" bold
+    file-decoration-style = "#c4a7e7" ul
+
+[merge]
+    tool = nvim
+    conflictstyle = diff3
+
+[mergetool "nvim"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[diff]
+    tool = nvim
+    colorMoved = default
+
+[difftool "nvim"]
+    cmd = nvim -d $LOCAL $REMOTE
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[rebase]
+    autoStash = true
+
+[rerere]
+    enabled = true
+
+[alias]
+    s = status -sb
+    a = add
+    aa = add --all
+    c = commit -v
+    cm = commit -m
+    co = checkout
+    sw = switch
+    swc = switch -c
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    d = diff
+    ds = diff --staged
+    f = fetch --all --prune
+    p = push
+    pl = pull --rebase
+    l = log --oneline --graph --decorate -20
+    la = log --oneline --graph --decorate --all
+    last = log -1 HEAD --stat
+    unstage = reset HEAD --
+    discard = checkout --
+    amend = commit --amend --no-edit
+    undo = reset --soft HEAD~1
+    stash-all = stash save --include-untracked
+    aliases = config --get-regexp alias
+    contributors = shortlog --summary --numbered
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    wip = "!git add -A && git commit -m 'WIP [skip ci]'"
+
+[credential]
+    helper = store
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "gh:"
+
+[url "git@gitlab.com:"]
+    insteadOf = "gl:"
+    pushInsteadOf = "gl:"
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

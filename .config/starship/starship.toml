@@ -1,0 +1,163 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║  Quant BSPWM - Starship Prompt                               ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
+format = """
+[](fg:#2a2837)\
+$os\
+$username\
+[](bg:#1e1c2a fg:#2a2837)\
+$directory\
+[](fg:#1e1c2a bg:#2a2837)\
+$git_branch\
+$git_status\
+[](fg:#2a2837 bg:#1e1c2a)\
+$python\
+$java\
+$nodejs\
+$rust\
+$golang\
+$lua\
+[](fg:#1e1c2a bg:#2a2837)\
+$time\
+[ ](fg:#2a2837)\
+$line_break\
+$character"""
+
+add_newline = true
+palette = "quant"
+
+[palettes.quant]
+pink = "#f5c2e7"
+rose = "#f38ba8"
+lavender = "#c4a7e7"
+mauve = "#cba6f7"
+blue = "#89b4fa"
+teal = "#94e2d5"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+fg = "#e0def4"
+fg_dim = "#6e6a86"
+bg = "#16141f"
+bg_light = "#1e1c2a"
+bg_lighter = "#2a2837"
+
+[os]
+disabled = false
+format = "[$symbol ]($style)"
+style = "bg:#2a2837 fg:pink"
+
+[os.symbols]
+Arch = "󰣇"
+Ubuntu = ""
+Fedora = ""
+Manjaro = ""
+Linux = ""
+
+[username]
+show_always = true
+format = "[ $user ]($style)"
+style_user = "bg:#2a2837 fg:pink bold"
+style_root = "bg:#2a2837 fg:rose bold"
+
+[directory]
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+style = "bg:#1e1c2a fg:lavender"
+read_only = " 󰌾"
+read_only_style = "bg:#1e1c2a fg:rose"
+truncation_length = 3
+truncation_symbol = ".../"
+truncate_to_repo = true
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Projects" = "󰲋 "
+"Videos" = " "
+"~" = " "
+
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+symbol = " "
+style = "bg:#2a2837 fg:teal"
+truncation_length = 20
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "bg:#2a2837 fg:peach"
+conflicted = " ${count}"
+ahead = " ${count}"
+behind = " ${count}"
+diverged = " ${ahead_count} ${behind_count}"
+untracked = " ${count}"
+stashed = "󰏗 ${count}"
+modified = " ${count}"
+staged = " ${count}"
+renamed = "󰑕 ${count}"
+deleted = " ${count}"
+
+[python]
+format = "[ $symbol$version( \\($virtualenv\\)) ]($style)"
+symbol = " "
+style = "bg:#1e1c2a fg:yellow"
+
+[java]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "bg:#1e1c2a fg:peach"
+
+[nodejs]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "bg:#1e1c2a fg:green"
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "󱘗 "
+style = "bg:#1e1c2a fg:rose"
+
+[golang]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "bg:#1e1c2a fg:blue"
+
+[lua]
+format = "[ $symbol$version ]($style)"
+symbol = "󰢱 "
+style = "bg:#1e1c2a fg:blue"
+
+[time]
+disabled = false
+format = "[ $time ]($style)"
+style = "bg:#2a2837 fg:fg_dim"
+time_format = "%H:%M"
+
+[character]
+success_symbol = "[](pink)"
+error_symbol = "[](rose)"
+vimcmd_symbol = "[](lavender)"
+
+[line_break]
+disabled = false
+
+[cmd_duration]
+format = "[ $duration]($style) "
+style = "fg:fg_dim"
+min_time = 2000
+show_notifications = false
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+
+[[battery.display]]
+threshold = 20
+style = "fg:rose"
+
+[[battery.display]]
+threshold = 50
+style = "fg:peach"

@@ -1,0 +1,44 @@
+[Hotkey]
+# Trigger input method switch
+TriggerKeys=
+# Enumerate when press trigger key repeatedly
+EnumerateWithTriggerKeys=True
+# Temporarily switch between first and current Input Method
+AltTriggerKeys=
+# Skip first input method while enumerating
+EnumerateSkipFirst=False
+# Enumerate Input Method Forward
+EnumerateForwardKeys=
+# Enumerate Input Method Backward
+EnumerateBackwardKeys=
+# Toggle embedded preedit
+TogglePreedit=
+
+[Hotkey/ActivateKeys]
+0=Super+I
+
+[Hotkey/DeactivateKeys]
+0=
+
+[Hotkey/PrevPage]
+0=Up
+
+[Hotkey/NextPage]
+0=Down
+
+[Hotkey/PrevCandidate]
+0=Shift+Tab
+
+[Hotkey/NextCandidate]
+0=Tab
+
+[Behavior]
+ActiveByDefault=False
+ShareInputState=No
+PreeditEnabledByDefault=True
+ShowInputMethodInformation=True
+showInputMethodInformationWhenFocusIn=True
+CompactInputMethodInformation=True
+ShowFirstInputMethodInformation=True
+DefaultPage=5
+OverrideXkbOption=False

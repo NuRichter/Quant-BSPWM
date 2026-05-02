@@ -1,0 +1,139 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║  Quant BSPWM - Dunst Notification Configuration              ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
+[global]
+    monitor = 0
+    follow = mouse
+
+    width = 320
+    height = (0, 300)
+    origin = top-right
+    offset = 12x46
+    scale = 0
+
+    notification_limit = 5
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 200
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 4
+
+    indicate_hidden = yes
+    transparency = 10
+    separator_height = 2
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 16
+    frame_width = 2
+    frame_color = "#c4a7e7"
+    gap_size = 6
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+
+    # Typography
+    font = JetBrainsMono Nerd Font 10
+    line_height = 2
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Dark, Adwaita"
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    icon_corner_radius = 6
+
+    # History
+    sticky_history = yes
+    history_length = 50
+
+    # Misc
+    dmenu = rofi -dmenu -p "Notification" -theme $HOME/.config/rofi/themes/quant-launcher.rasi
+    browser = xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 12
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+
+    # Mouse actions
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#16141fE6"
+    foreground = "#908caa"
+    frame_color = "#2a2837"
+    highlight = "#89b4fa"
+    timeout = 5
+    default_icon = dialog-information
+
+[urgency_normal]
+    background = "#16141fE6"
+    foreground = "#e0def4"
+    frame_color = "#c4a7e7"
+    highlight = "#f5c2e7"
+    timeout = 8
+    default_icon = dialog-information
+    override_pause_level = 30
+
+[urgency_critical]
+    background = "#16141fF2"
+    foreground = "#f2f0ff"
+    frame_color = "#f38ba8"
+    highlight = "#f38ba8"
+    timeout = 0
+    default_icon = dialog-warning
+    override_pause_level = 60
+
+# App-specific rules
+[spotify]
+    appname = Spotify
+    frame_color = "#a6e3a1"
+    timeout = 4
+    set_stack_tag = "spotify"
+
+[discord]
+    appname = discord
+    frame_color = "#89b4fa"
+    timeout = 6
+
+[firefox]
+    appname = Firefox
+    frame_color = "#fab387"
+    timeout = 6
+
+[volume]
+    appname = "Volume"
+    set_stack_tag = "volume"
+    timeout = 2
+
+[brightness]
+    appname = "Brightness"
+    set_stack_tag = "brightness"
+    timeout = 2
+
+[screenshot]
+    appname = "Screenshot"
+    frame_color = "#f5c2e7"
+    timeout = 4
+
+[fcitx]
+    appname = "fcitx*"
+    frame_color = "#fab387"
+    timeout = 3
