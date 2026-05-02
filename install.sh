@@ -132,12 +132,14 @@ install_packages() {
         kitty alacritty
         starship
         zsh
+        tmux
     )
 
     # File management
     local file_pkgs=(
         thunar thunar-archive-plugin thunar-volman
         file-roller unzip p7zip
+        yazi ffmpegthumbnailer unar
     )
 
     # Media
@@ -168,6 +170,22 @@ install_packages() {
         kvantum
     )
 
+    # Editor and dev tools
+    local editor_pkgs=(
+        neovim
+        lazygit
+        git-delta
+        bat
+        eza
+        fd
+        ripgrep
+        fzf
+        zoxide
+        dust
+        duf
+        procs
+    )
+
     # Utilities
     local util_pkgs=(
         polkit-gnome
@@ -178,6 +196,7 @@ install_packages() {
         zathura zathura-pdf-mupdf
         imagemagick
         jq bc
+        bluez bluez-utils
     )
 
     # System
@@ -195,6 +214,7 @@ install_packages() {
         "${font_pkgs[@]}" \
         "${ime_pkgs[@]}" \
         "${theme_pkgs[@]}" \
+        "${editor_pkgs[@]}" \
         "${util_pkgs[@]}" \
         "${sys_pkgs[@]}" 2>&1 | tee -a "$LOG_FILE"
 
@@ -244,8 +264,20 @@ backup_existing() {
         "$HOME/.config/gtk-3.0"
         "$HOME/.config/gtk-4.0"
         "$HOME/.config/fcitx5"
+        "$HOME/.config/nvim"
+        "$HOME/.config/tmux"
+        "$HOME/.config/yazi"
+        "$HOME/.config/mpv"
+        "$HOME/.config/lazygit"
+        "$HOME/.config/bat"
+        "$HOME/.config/fontconfig"
+        "$HOME/.config/git"
+        "$HOME/.config/environment.d"
         "$HOME/.Xresources"
         "$HOME/.xinitrc"
+        "$HOME/.xprofile"
+        "$HOME/.zshrc"
+        "$HOME/.editorconfig"
     )
 
     for item in "${configs[@]}"; do
@@ -268,6 +300,8 @@ deploy_configs() {
         bspwm sxhkd polybar picom rofi kitty alacritty
         dunst neofetch starship zathura btop cava
         gtk-3.0 gtk-4.0 fcitx5
+        nvim tmux yazi mpv lazygit bat fontconfig
+        git environment.d
     )
 
     for dir in "${config_dirs[@]}"; do
@@ -298,12 +332,24 @@ deploy_configs() {
     fi
 
     # Root-level dotfiles
-    for dotfile in .Xresources .xinitrc; do
+    for dotfile in .Xresources .xinitrc .xprofile .zshrc .editorconfig; do
         if [[ -f "$SCRIPT_DIR/$dotfile" ]]; then
             cp -f "$SCRIPT_DIR/$dotfile" "$HOME/$dotfile"
             info "Deployed: $dotfile"
         fi
     done
+
+    # Mimeapps
+    if [[ -f "$SCRIPT_DIR/.config/mimeapps.list" ]]; then
+        cp -f "$SCRIPT_DIR/.config/mimeapps.list" "$HOME/.config/mimeapps.list"
+        info "Deployed: mimeapps.list"
+    fi
+
+    # User directories
+    if [[ -f "$SCRIPT_DIR/.config/user-dirs.dirs" ]]; then
+        cp -f "$SCRIPT_DIR/.config/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
+        info "Deployed: user-dirs.dirs"
+    fi
 
     # Set permissions
     chmod +x "$HOME/.config/bspwm/bspwmrc"
@@ -364,6 +410,7 @@ post_install() {
 
     # Enable services
     sudo systemctl enable NetworkManager 2>/dev/null || true
+    sudo systemctl enable bluetooth 2>/dev/null || true
 
     # Font cache
     log "Rebuilding font cache..."
