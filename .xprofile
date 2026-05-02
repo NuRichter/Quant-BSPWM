@@ -1,0 +1,46 @@
+#!/bin/sh
+# Quant BSPWM - xprofile
+# Sourced by display managers (SDDM, LightDM, etc.)
+
+# Merge Xresources
+[[ -f "$HOME/.Xresources" ]] && xrdb -merge "$HOME/.Xresources"
+
+# Input method
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus
+
+# Java BSPWM fix
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Terminal
+export TERMINAL=kitty
+export BROWSER=firefox
+
+# Qt theming
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Keyboard rate
+xset r rate 300 50
+
+# Cursor
+xsetroot -cursor_name left_ptr
+
+# DPMS
+xset s 600 5
+xset dpms 600 900 1200
+
+# Starship
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
